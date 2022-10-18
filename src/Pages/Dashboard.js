@@ -7,6 +7,7 @@ import Notifications from "../Pages/Notifications";
 import Message from "./Message";
 import Feedback from "./Feedback";
 import NotFound from "./NotFound";
+import Data from "./data";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -204,6 +205,7 @@ function Dashboard() {
                   />
                 </ListItemButton>
               </ListItem>
+
               <ListItem
                 onClick={() => {
                   navigate("message");
@@ -262,6 +264,32 @@ function Dashboard() {
                   />
                 </ListItemButton>
               </ListItem>
+              <ListItem
+                onClick={() => {
+                  navigate("data");
+                }}
+                disablePadding
+                sx={{ display: "block" }}
+              >
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <NotificationsActiveIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Data" sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
             </List>
           </Drawer>
         </Box>
@@ -276,6 +304,7 @@ function Dashboard() {
             <Route path="notifications" element={<Notifications />} />
             <Route path="message" element={<Message />} />
             <Route path="feedback" element={<Feedback />} />
+            <Route path="data" element={<Data />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <DrawerHeader />

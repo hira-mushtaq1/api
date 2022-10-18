@@ -12,3 +12,12 @@ h1{
     text-decoration: none;
     color: #ECCE42;
 }
+.noo{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+ 
+    
+
+}
